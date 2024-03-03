@@ -1,0 +1,23 @@
+.navpanel {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 16px 32px;
+  background-color: turquoise;
+  border-bottom: 1px solid #1fb9aa;
+  box-shadow: 1px 1px 4px #0d423d;
+  font-size: 24px;
+}
+
+.navpanel .link {
+  color: red;
+  background-color: teal;
+}
+
+.active {
+  height: 100px;
+  color: bisque;
+  border: 1px solid tomato;
+}
