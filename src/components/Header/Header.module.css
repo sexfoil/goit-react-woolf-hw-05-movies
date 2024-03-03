@@ -11,13 +11,16 @@
   font-size: 24px;
 }
 
-.navpanel .link {
-  color: red;
-  background-color: teal;
+.navpanel a {
+  text-align: center;
+  padding: 4px 16px;
+  background-color: transparent;
+  border: 1px solid azure;
+  border-radius: 8px;
 }
 
-.active {
-  height: 100px;
-  color: bisque;
-  border: 1px solid tomato;
+a.active {
+  color: azure;
+  background-color: teal;
+  border: 1px solid teal;
 }

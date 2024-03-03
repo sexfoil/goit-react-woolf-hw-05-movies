@@ -3,11 +3,13 @@ import css from './MovieList.module.css';
 
 const MovieList = ({ movies }) => {
   return (
-    <ul className={css.list}>
-      {movies.map(movie => (
-        <MovieListItem key={movie.id} title={movie.title} />
-      ))}
-    </ul>
+    <div className={css.container}>
+      <ul className={css.list}>
+        {movies.map(movie => (
+          <MovieListItem key={movie.id} title={movie.title} />
+        ))}
+      </ul>
+    </div>
   );
 };
 

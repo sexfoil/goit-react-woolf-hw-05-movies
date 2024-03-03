@@ -12,7 +12,7 @@ const SearchForm = ({ onMovieSearch }) => {
   };
 
   const onChange = evt => {
-    setQuery(evt.target.value);
+    setQuery(evt.target.value.trim());
   };
 
   return (

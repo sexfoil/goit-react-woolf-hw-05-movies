@@ -1,5 +1,4 @@
 import { useSearchParams } from 'react-router-dom';
-import css from './Movies.module.css';
 import { useEffect, useState } from 'react';
 import { searchMovies } from 'api/ApiTheMovieDB';
 import SearchForm from 'components/SearchForm/SearchForm';
@@ -8,8 +7,6 @@ import MovieList from 'components/MovieList/MovieList';
 const Movies = () => {
   const [searchQuery, setSearchQuery] = useSearchParams();
   const [movies, setMovies] = useState([]);
-
-  useEffect(() => {}, []);
 
   useEffect(() => {
     const query = searchQuery.get('query');
@@ -22,7 +19,7 @@ const Movies = () => {
   }, [searchQuery]);
 
   const onMovieSearch = query => {
-    if (query.trim()) {
+    if (query) {
       setSearchQuery({ query });
     }
   };
@@ -33,9 +30,7 @@ const Movies = () => {
         query={searchQuery.get('query')}
         onMovieSearch={onMovieSearch}
       />
-      <div className={css.container}>
-        {movies && <MovieList movies={movies} />}
-      </div>
+      {movies && <MovieList movies={movies} />}
     </>
   );
 };
