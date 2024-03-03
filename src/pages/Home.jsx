@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import css from './Home.module.css';
 import { getTrendingMovies } from 'api/ApiTheMovieDB';
 import ErrorMessage from 'components/ErrorMessage/ErrorMessage';
 import Loader from 'components/Loader/Loader';
 import MovieList from 'components/MovieList/MovieList';
+import css from './Home.module.css';
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -23,7 +23,7 @@ const Home = () => {
       <h3>Trending movies:</h3>
       {loading && <Loader />}
       {errorMessage && <ErrorMessage message={errorMessage} />}
-      {movies && <MovieList movies={movies}>SOME</MovieList>}
+      {movies && <MovieList movies={movies} />}
     </div>
   );
 };

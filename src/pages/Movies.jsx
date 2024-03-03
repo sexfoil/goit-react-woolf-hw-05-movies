@@ -1,22 +1,41 @@
-import { Outlet } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import css from './Movies.module.css';
 import { useEffect, useState } from 'react';
-import { getTrendingMovies } from 'api/ApiTheMovieDB';
+import { searchMovies } from 'api/ApiTheMovieDB';
+import SearchForm from 'components/SearchForm/SearchForm';
+import MovieList from 'components/MovieList/MovieList';
 
 const Movies = () => {
-  // const [movies, setMovies] = useState([]);
+  const [searchQuery, setSearchQuery] = useSearchParams();
+  const [movies, setMovies] = useState([]);
 
-  // useEffect(() => {
-  //   getTrendingMovies()
-  //     .then(setMovies)
-  //     .catch(err => console.log(err.message))
-  //     .finally(console.log('END API CALL'));
-  // }, []);
+  useEffect(() => {}, []);
+
+  useEffect(() => {
+    const query = searchQuery.get('query');
+    if (!query) return;
+
+    searchMovies(query)
+      .then(setMovies)
+      .catch(err => console.log(err.message))
+      .finally(console.log('END API CALL'));
+  }, [searchQuery]);
+
+  const onMovieSearch = query => {
+    if (query.trim()) {
+      setSearchQuery({ query });
+    }
+  };
 
   return (
     <>
-      <div className={css.container}>Movies page</div>
-      <Outlet />
+      <SearchForm
+        query={searchQuery.get('query')}
+        onMovieSearch={onMovieSearch}
+      />
+      <div className={css.container}>
+        {movies && <MovieList movies={movies} />}
+      </div>
     </>
   );
 };

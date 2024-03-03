@@ -6,7 +6,7 @@ const Header = () => {
     <>
       <nav className={css.navpanel}>
         <NavLink to={'/'}>Home</NavLink>
-        <NavLink to={'/movie'}>Movie</NavLink>
+        <NavLink to={'/movies'}>Movie</NavLink>
       </nav>
       <Outlet />
     </>

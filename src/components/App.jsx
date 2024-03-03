@@ -1,8 +1,8 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import Home from 'pages/Home';
 import Movies from 'pages/Movies';
-import css from './App.module.css';
 import Header from './Header/Header';
+import css from './App.module.css';
 
 export const App = () => {
   return (

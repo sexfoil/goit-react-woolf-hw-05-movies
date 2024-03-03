@@ -1,10 +1,8 @@
 .container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 100px;
-  margin: 50px 50px;
-  border: 1px solid teal;
-  background-color: aquamarine;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 32px;
+  background-color: azure;
 }
