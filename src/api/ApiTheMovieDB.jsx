@@ -14,9 +14,7 @@ export const getParams = params => {
 
 export const getTrendingMovies = async () => {
   const url = `${path.TRENDING}${path.MOVIE}/day?${getParams(INITIAL_PARAMS)}`;
-  // console.log('url>> ', url);
   const { data } = await axios.get(url);
-  console.log('trending results>> ', data.results);
   return data.results;
 };
 
@@ -24,8 +22,14 @@ export const searchMovies = async searchQuery => {
   const params = { query: searchQuery, include_adult: true };
   const paramsString = `?${getParams(INITIAL_PARAMS)}&${getParams(params)}`;
   const url = `${path.SEARCH}${path.MOVIE}${paramsString}`;
-  // console.log('search url>> ', url);
   const { data } = await axios.get(url);
-  console.log('search results>> ', data.results);
   return data.results;
+};
+
+export const getMovieById = async id => {
+  const paramsString = `?${getParams(INITIAL_PARAMS)}`;
+  const url = `${path.MOVIE}/${id}${paramsString}`;
+  const { data } = await axios.get(url);
+  console.log('data results>> ', data);
+  return data;
 };

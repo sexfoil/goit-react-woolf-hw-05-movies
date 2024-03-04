@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { getTrendingMovies } from 'api/ApiTheMovieDB';
 import ErrorMessage from 'components/ErrorMessage/ErrorMessage';
 import Loader from 'components/Loader/Loader';
-import MovieList from 'components/MovieList/MovieList';
+import MoviesList from 'components/MoviesList/MoviesList';
 import css from './Home.module.css';
 
 const Home = () => {
@@ -23,7 +23,7 @@ const Home = () => {
       <h3>Trending movies:</h3>
       {loading && <Loader />}
       {errorMessage && <ErrorMessage message={errorMessage} />}
-      {movies && <MovieList movies={movies} />}
+      {movies && <MoviesList movies={movies} />}
     </div>
   );
 };

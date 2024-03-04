@@ -1,7 +1,7 @@
-import MovieListItem from 'components/MovieListItem/MovieListItem';
-import css from './MovieList.module.css';
+import MovieListItem from 'components/MoviesListItem/MoviesListItem';
+import css from './MoviesList.module.css';
 
-const MovieList = ({ movies }) => {
+const MoviesList = ({ movies }) => {
   return (
     <div className={css.container}>
       <ul className={css.list}>
@@ -13,4 +13,4 @@ const MovieList = ({ movies }) => {
   );
 };
 
-export default MovieList;
+export default MoviesList;

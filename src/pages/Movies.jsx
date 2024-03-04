@@ -2,7 +2,7 @@ import { useSearchParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { searchMovies } from 'api/ApiTheMovieDB';
 import SearchForm from 'components/SearchForm/SearchForm';
-import MovieList from 'components/MovieList/MovieList';
+import MoviesList from 'components/MoviesList/MoviesList';
 
 const Movies = () => {
   const [searchQuery, setSearchQuery] = useSearchParams();
@@ -30,7 +30,7 @@ const Movies = () => {
         query={searchQuery.get('query')}
         onMovieSearch={onMovieSearch}
       />
-      {movies && <MovieList movies={movies} />}
+      {movies && <MoviesList movies={movies} />}
     </>
   );
 };
