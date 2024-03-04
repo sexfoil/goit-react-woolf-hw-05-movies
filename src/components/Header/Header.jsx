@@ -1,5 +1,5 @@
-import { NavLink, Outlet } from 'react-router-dom';
 import css from './Header.module.css';
+import { NavLink, Outlet } from 'react-router-dom';
 
 const Header = () => {
   const setActive = ({ isActive }) => (isActive ? css.active : '');
@@ -11,7 +11,7 @@ const Header = () => {
           Home
         </NavLink>
         <NavLink className={setActive} to={'/movies'}>
-          Movie
+          Movies
         </NavLink>
       </nav>
       <Outlet />

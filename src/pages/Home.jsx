@@ -1,9 +1,9 @@
+import css from './Home.module.css';
 import { useEffect, useState } from 'react';
 import { getTrendingMovies } from 'api/ApiTheMovieDB';
 import ErrorMessage from 'components/ErrorMessage/ErrorMessage';
 import Loader from 'components/Loader/Loader';
 import MoviesList from 'components/MoviesList/MoviesList';
-import css from './Home.module.css';
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
