@@ -33,3 +33,11 @@ export const getMovieById = async id => {
   console.log('data results>> ', data);
   return data;
 };
+
+export const getCredits = async id => {
+  const paramsString = `?${getParams(INITIAL_PARAMS)}`;
+  const url = `${path.MOVIE}/${id}/${path.CREDITS}${paramsString}`;
+  const { data } = await axios.get(url);
+  console.log('credits>> ', data);
+  return data;
+};

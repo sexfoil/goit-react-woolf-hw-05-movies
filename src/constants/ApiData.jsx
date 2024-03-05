@@ -11,5 +11,9 @@ export const TheMovieDB = {
     MOVIE: '/movie',
     TRENDING: '/trending',
     SEARCH: '/search',
+    CREDITS: '/credits',
   },
 };
+
+export const NO_IMAGE =
+  'https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg';
