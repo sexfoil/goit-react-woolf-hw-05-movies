@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { TheMovieDB } from './ApiData';
+import { TheMovieDB } from '../constants/ApiData';
 
 const { BASE_URL, API_KEY, path } = TheMovieDB;
 const INITIAL_PARAMS = {

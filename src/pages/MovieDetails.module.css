@@ -1,0 +1,15 @@
+.container {
+  padding: 16px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 8px auto;
+  padding: 0 32px;
+  padding-bottom: 8px;
+  list-style: circle;
+  color: cadetblue;
+  border-bottom: 1px dashed teal;
+}
