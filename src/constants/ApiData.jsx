@@ -12,6 +12,7 @@ export const TheMovieDB = {
     TRENDING: '/trending',
     SEARCH: '/search',
     CREDITS: '/credits',
+    REVIEWS: '/reviews',
   },
 };
 

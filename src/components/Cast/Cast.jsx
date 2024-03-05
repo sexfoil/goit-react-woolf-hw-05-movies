@@ -1,4 +1,3 @@
-import css from './Cast.module.css';
 import Loader from 'components/Loader/Loader';
 import ErrorMessage from 'components/ErrorMessage/ErrorMessage';
 import { useEffect, useState } from 'react';
@@ -13,7 +12,6 @@ const Cast = () => {
   const { movieId } = useParams();
 
   useEffect(() => {
-    console.log('Cast mount...');
     setLoading(true);
     getCredits(movieId)
       .then(setCredits)
