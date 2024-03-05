@@ -10,6 +10,13 @@
   padding: 0 32px;
   padding-bottom: 8px;
   list-style: circle;
-  color: cadetblue;
+  color: teal;
   border-bottom: 1px dashed teal;
+}
+
+.btn {
+  border: 1px solid teal;
+  background-color: cadetblue;
+  padding: 2px 32px;
+  border-radius: 50% 2px 2px 50%;
 }
