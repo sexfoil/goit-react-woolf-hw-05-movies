@@ -1,14 +1,14 @@
 import ReviewItem from 'components/ReviewItem/ReviewItem';
 
 const ReviewList = ({ reviews }) => {
-  return reviews ? (
+  return reviews.length !== 0 ? (
     <ul>
       {reviews.map(review => {
         return <ReviewItem key={review.id} {...review} />;
       })}
     </ul>
   ) : (
-    "We don't have any reviews for this film"
+    <p>We don't have any reviews for this movie.</p>
   );
 };
 

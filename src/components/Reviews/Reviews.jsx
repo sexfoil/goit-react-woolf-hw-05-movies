@@ -23,7 +23,7 @@ const Reviews = () => {
     <div>
       {loading && <Loader />}
       {errorMessage && <ErrorMessage message={errorMessage} />}
-      {reviews && <ReviewList reviews={reviews} />}
+      {reviews !== null ? <ReviewList reviews={reviews} /> : <></>}
     </div>
   );
 };
