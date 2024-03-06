@@ -1,5 +1,5 @@
 import css from './MovieDetails.module.css';
-import { Suspense, useEffect, useState } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 import { getMovieById } from 'api/ApiTheMovieDB';
 import MovieItem from 'components/MovieItem/MovieItem';
@@ -12,13 +12,7 @@ const MovieDetails = () => {
   const [loading, setLoading] = useState(false);
   const { movieId } = useParams();
   const location = useLocation();
-  const [backPath, setBackPath] = useState('/');
-
-  useEffect(() => {
-    if (location.state) {
-      setBackPath(location.state.from);
-    }
-  }, [location]);
+  const backPath = useRef(location.state?.from ?? '/');
 
   useEffect(() => {
     setLoading(true);
@@ -30,7 +24,7 @@ const MovieDetails = () => {
 
   return (
     <div className={css.container}>
-      <Link className={css.btn} to={backPath}>
+      <Link className={css.btn} to={backPath.current}>
         Go back
       </Link>
       {loading && <Loader />}
