@@ -1,5 +1,7 @@
+import { Suspense } from 'react';
 import css from './Header.module.css';
 import { NavLink, Outlet } from 'react-router-dom';
+import Loader from 'components/Loader/Loader';
 
 const Header = () => {
   const setActive = ({ isActive }) => (isActive ? css.active : '');
@@ -14,7 +16,9 @@ const Header = () => {
           Movies
         </NavLink>
       </nav>
-      <Outlet />
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
     </>
   );
 };

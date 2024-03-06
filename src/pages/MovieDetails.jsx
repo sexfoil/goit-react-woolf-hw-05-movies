@@ -1,5 +1,5 @@
 import css from './MovieDetails.module.css';
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 import { getMovieById } from 'api/ApiTheMovieDB';
 import MovieItem from 'components/MovieItem/MovieItem';
@@ -42,7 +42,9 @@ const MovieDetails = () => {
           </ul>
         </>
       )}
-      <Outlet />
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
     </div>
   );
 };
