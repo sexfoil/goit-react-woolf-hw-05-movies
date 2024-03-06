@@ -14,7 +14,7 @@ const Home = () => {
     setLoading(true);
     getTrendingMovies()
       .then(setMovies)
-      .catch(err => setErrorMessage(err.message))
+      .catch(error => setErrorMessage(error.message))
       .finally(setLoading(false));
   }, []);
 
@@ -23,7 +23,7 @@ const Home = () => {
       <h3>Trending movies:</h3>
       {loading && <Loader />}
       {errorMessage && <ErrorMessage message={errorMessage} />}
-      {movies && <MoviesList movies={movies} />}
+      {movies.length !== 0 && <MoviesList movies={movies} />}
     </div>
   );
 };

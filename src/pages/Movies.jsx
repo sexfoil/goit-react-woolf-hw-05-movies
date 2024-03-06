@@ -37,7 +37,7 @@ const Movies = () => {
       />
       {loading && <Loader />}
       {errorMessage && <ErrorMessage message={errorMessage} />}
-      {movies && <MoviesList movies={movies} />}
+      {movies.length !== 0 && <MoviesList movies={movies} />}
     </>
   );
 };
