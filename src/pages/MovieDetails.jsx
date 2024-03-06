@@ -12,6 +12,13 @@ const MovieDetails = () => {
   const [loading, setLoading] = useState(false);
   const { movieId } = useParams();
   const location = useLocation();
+  const [backPath, setBackPath] = useState('/');
+
+  useEffect(() => {
+    if (location.state) {
+      setBackPath(location.state.from);
+    }
+  }, [location]);
 
   useEffect(() => {
     setLoading(true);
@@ -23,7 +30,7 @@ const MovieDetails = () => {
 
   return (
     <div className={css.container}>
-      <Link className={css.btn} to={location.state?.from ?? '/'}>
+      <Link className={css.btn} to={backPath}>
         Go back
       </Link>
       {loading && <Loader />}
